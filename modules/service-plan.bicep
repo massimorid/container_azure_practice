@@ -6,7 +6,10 @@ resource appServicePlan 'Microsoft.Web/serverFarms@2022-03-01' = {
   name: name
   location: location
   sku: {
-    name: sku
+      name: sku.name
+      tier: sku.tier
+      family: sku.family
+      capacity: sku.capacity
   }
   kind: 'linux'
   properties: {
